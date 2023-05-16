@@ -43,7 +43,6 @@ div_0.onclick = _ => {
 }
 
 
-
 // get and format the canvas element
     const cnv_1 = document.getElementById ('particle_example')
     cnv_1.width = cnv_1.parentNode.scrollWidth
