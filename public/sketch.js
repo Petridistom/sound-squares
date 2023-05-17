@@ -5,34 +5,16 @@ const div_0  = document.getElementById ('resume_audio')
 const audio_context = new AudioContext ()
 audio_context.suspend ()
 
-// create string with context state
-const init_msg = `audio context is ${ audio_context.state }`
-
-// convert string to uppercase and pass to div element
-div_0.innerText = init_msg.toUpperCase ()
-
 // define an async click handler function 
 async function init_audio () {
 
     // wait for audio context to resume
     await audio_context.resume ()
-
-    // then set background colour
-    div_0.style.backgroundColor = 'limegreen'
-
-    // create string with new context state
-    const msg = `audio context is ${ audio_context.state }`
-
-    // unitalicise text style
-    div_0.style.fontStyle  = 'normal'
-
-    // convert to uppercase and pass to div element
-    div_0.innerText = msg.toUpperCase ()
 }
 
 // pass anonymous function to the .onclick property
 // of the div element
-div_0.onclick = _ => {
+div_0.onclick = e => {
 
     // if audio context is not running
     if (audio_context.state != 'running') {
